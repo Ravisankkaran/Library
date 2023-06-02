@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<img class ="img"src="./image/img7.jpg" alt="Header Image">
+  
+  
+<style>
+* {
+  box-sizing: border-box;   
+  background-color: rgb(165, 165, 165);
+}
+.img {
+    max-width:100%;
+    width: 1500px;
+    height: 300px;
+    border: 1px solid #000;
+    border-radius: 10px;
+  }
+  
+  
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+.a{
+    padding-top: 10px;
+    text-align: center
+}
+
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+.my-custom-scrollbar {
+position: relative;
+height: 250px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+table thead th,
+table tbody td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+#tbody.scrollable {
+    display: block;
+    max-height: 10px;
+    overflow-y: scroll;
+  }
+</style>
+</head>
+<body>
+<section>
+</section>
+<h2 class="a">List of Books</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+
+<table id="myTable">
+  <tr class="header">
+    
+    <th style="width:auto;">Title</th>
+    <th style="width: auto;">Author</th>
+    <th style="width: auto;">Subject</th>
+    <th style="width: auto;">Published Date</th>
+    <th style="width: auto;">Link</th>
+  </tr>
+  <tbody class="scrollable"></tbody>
+  <tr>
+    <td>To Kill a Mockingbird</td>
+    <td>Harper Lee</td>
+    <td><b>Subject:</b>The book explores themes of racial injustice, inequality, morality, and the loss of innocence.</td>
+    <td>Published in 1960.</td>
+    <td><a href="To Kill a Mockingbird.html">click Here</a></td>
+  </tr>
+  <tr>
+    
+    <td>1984</td>
+    <td>George Orwell</td>
+    <td><b>Subject:</b>The novel delves into themes of totalitarianism, surveillance, government control, individual freedom, and the power of language.</td>
+    <td>Published in 1949.</td>
+    <td><a href="1984.html">click Here</a></td>
+  </tr>
+  <tr>
+
+    <td>Pride and Prejudice</td>
+    <td>Jane Austen</td>
+    <td><b>Subject:</b>This classic novel explores themes of love, social class, marriage, gender roles, and the importance of overcoming prejudice and misconceptions</td>
+    <td>Published in 1813.</td>
+    <td><a href="Pride_and_Prejudice.html">click Here</a></td>
+  </tr>
+  <tr>
+    
+    <td>The Great Gatsby</td>
+    <td>F. Scott Fitzgerald</td>
+    <td><b>Subject:</b>The book examines themes of the American Dream, wealth and social status, love and obsession, and the corrupting influence of money and materialism.</td>
+    <td>Published in 1925.</td>
+    <td><a href="The Great Gatsby.html">click Here</a></td>
+  </tr>
+  <tr>
+   
+    <td>The Catcher in the Rye</td>
+    <td>J.D. Salinger</td>
+    <td><b>Subject:</b>This coming-of-age novel explores themes of teenage angst, alienation, identity, authenticity, and the loss of innocence.</td>
+    <td>Published in 1951.</td>
+    <td><a href="The Catcher in the Rye.html">click Here</a></td>
+  </tr>
+  <tr>
+    
+    <td>Moby Dick</td>
+    <td>Herman Melville</td>
+    <td><b>Subject:</b>The novel explores themes of obsession, revenge, human nature, the nature of evil, and man's struggle against the forces of the natural world</td>
+    <td>Published in 1851.</td>
+    <td><a href="Moby Dick.html">click Here</a></td>
+  </tr>
+  <tr>
+    
+    <td>Jane Eyre</td>
+    <td>Charlotte Bronte</td>
+    <td><b>Subject:</b>This novel touches upon themes of love, independence, social class, gender roles, morality, and the search for identity and belonging.</td>
+    <td>Published in 1847.</td>
+    <td><a href="Jane Eyre.html">click Here</a></td>
+  </tr>
+  <tr>
+    
+    <td>The Lord of the Rings</td>
+    <td>J.R.R. Tolkien</td>
+    <td><b>Subject:</b>The epic fantasy trilogy explores themes of good versus evil, the hero's journey, friendship, sacrifice, power and corruption, and the importance of hope and resilience.</td>
+    <td>Published in 1954.</td>
+    <td><a href="The Lord of the Rings.html">click Here</a></td>
+  </tr>
+</table>
+</div>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<button class="button" onclick="window.location.href = '1.html';"> go back</button>
+</body>
+</html>
