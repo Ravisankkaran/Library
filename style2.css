@@ -1,0 +1,61 @@
+.link{
+    position: fixed;
+    left:4%;
+    top:10%;
+  width:25%;
+    background: transparent;
+  
+}
+input{
+  width:90%;
+}
+p{
+  font-size:4vw;
+  margin:0% 0%;
+  padding:50px 0px;
+  width:100%;
+  color:#333;
+  text-align:center; 
+}
+#divTable{
+    position: fixed;
+    top:0%;
+    width:100%;
+}
+
+.tbl{
+    font-size: 12px;
+    float:right;
+    margin-bottom:40%;
+    width: 70%;
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px solid #7FA1AD;
+}
+.tbl-float{
+  width: 70%;
+  background:#fff;
+   font-size: 18px;
+}
+.tbl th,.tbl-float th{
+    width:33.3%;
+    padding: 15px 10px 10px 10px;
+    font-size: 20px;
+    color: #fff; 
+    text-align: left;
+    background: #7FA1AD;
+    border: 1px solid #7FA1AD;
+}
+.tbl tbody{
+    background: #B2CFD9;
+}
+.tbl td{
+    width:33.3%;
+    color: #333;
+    height: 40px;
+    padding: 0px 10px;
+  font-size:16px;
+}
+.tbl tr:nth-child(even) {
+    background: #fff;
+}
